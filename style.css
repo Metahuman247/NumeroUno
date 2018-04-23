@@ -1,0 +1,51 @@
+h1{
+    text-align:center;
+    font-size:50px;
+    font-family:'Berkshire Swash', cursive;
+ 
+}
+body{
+    background-color:red;
+    background-image:url("https://img00.deviantart.net/3720/i/2010/008/0/8/horus___wide_by_ingostan.jpg");
+}
+input{
+    border-radius:50px;
+}
+span{
+    font-size:15px;
+
+}
+p{
+    font-size:30px;
+    color: brown;
+}
+#shop{
+    float:right;
+}
+li{
+    text-align:center;
+}
+#cart{
+    color:green;
+    
+}
+#office{
+   color: red;
+   border:solid;
+}
+input, button{
+    font-size:30px;
+    float:right;
+}
+ul{
+    float:right;
+}
+    
+input placeholder{
+  font-size: 10px;
+}
+    
+    
+    
+    
+    
