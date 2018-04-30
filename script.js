@@ -12,10 +12,17 @@ function callGiphyAPIWithSearchTerm(searchTerm) {
       method: "GET",
       success: function(response) {
         console.log(response);
-    for(var i=0; i< 10; i++) {
         var url = response.Poster;
-           $('#movies').html('<img src=' + url + '/>');
-        }
+           $("#movies").html('<img src=' + url + '/>');
+           for(i=0; i < response.Search.length; i++){
+               console.log(response);
+               var search = response.Search;
+               $("#movies").append('<img src=' + search[i].Poster + '/>');
+           }
+        // for loop that goes through response.Search
+        // inside the loop you want to grab response.Search[index].Poster as url
+        // $("#movies").html('<img src=' + url + '/>');
+
       },
     }); 
     
@@ -35,4 +42,8 @@ function callGiphyAPIWithSearchTerm(searchTerm) {
 $("#search").click(function(){
     var inputValue = $("input").val();
     callGiphyAPIWithSearchTerm(inputValue);
+});
+
+$("#click").click(function(){
+    $("#add").append(input);
 });
