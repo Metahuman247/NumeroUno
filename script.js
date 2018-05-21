@@ -5,19 +5,21 @@ function callGiphyAPIWithSearchTerm(searchTerm) {
       success: function(response) {
         console.log(response);
         var search = response.Search;
-        for(i=0; i < response.Search.length; i++){
-           var html = "";
-           html += "<div class='movie-items' data-id="+search[i].imdbID+">";
-           html +='<img src=' + search[i].Poster + '/>';
-           html += "</div>";
-           $("#movies").append(html);
+        var html = "";
+        for(var i=0; i < response.Search.length; i++){
+           if (search[i].Poster !== 'N/A') {
+               html += "<div class='movie-items' data-id="+search[i].imdbID+">";
+                   html +='<img src=' + search[i].Poster + '/>';
+               html += "</div>";
+           }
         }
+        $("#movies").html(html);
 
       },
     }); 
 }
 
-$("#search").click(function(){
+$("#search-btn").click(function(){
     var inputValue = $("input").val();
     callGiphyAPIWithSearchTerm(inputValue);
 });
